@@ -1,16 +1,24 @@
 import React from 'react';
+import styles from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
-const ImageGalleryItem = ({ src, largeImg }) => (
-  <li className="ImageGalleryItem">
+const ImageGalleryItem = ({ id, src, largeImg }) => (
+  <li className={styles.ImageGalleryItem} key={id}>
     <img
       src={src}
       alt=""
-      className="ImageGalleryItem-image"
+      className={styles.ImageGalleryItemImage}
       data-img={largeImg}
       height="240"
       width="320"
     />
   </li>
 );
+
+ImageGalleryItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  largeImg: PropTypes.string.isRequired,
+};
 
 export default ImageGalleryItem;
