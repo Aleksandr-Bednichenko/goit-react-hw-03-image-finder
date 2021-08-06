@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Searchbar from './Components/Searchbar';
 import ImageGallery from './Components/ImageGallery';
 import styles from './App.module.css';
-import imgApi from './Components/Api';
+import imgApi from './Api';
 import Button from './Components/Button';
 import Modal from './Components/Modal';
 import Load from './Components/Loader';
@@ -28,7 +28,6 @@ class App extends React.Component {
     if (prevName !== nextName) {
       this.fetchImages();
     }
-    console.log(this.state.images);
     if (this.state.images.length > 10) {
       window.scrollTo({
         top: document.documentElement.scrollHeight,
@@ -90,7 +89,6 @@ class App extends React.Component {
         .then(images =>
           this.setState(prevState => ({
             images: [...prevState.images, ...images.hits],
-            page: prevState.page + 1,
           })),
         )
         .catch(error => this.setState({ error: true }))

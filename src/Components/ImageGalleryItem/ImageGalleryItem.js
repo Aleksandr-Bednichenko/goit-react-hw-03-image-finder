@@ -16,7 +16,7 @@ const ImageGalleryItem = ({ id, src, largeImg }) => (
 );
 
 ImageGalleryItem.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number,
   src: PropTypes.string.isRequired,
   largeImg: PropTypes.string.isRequired,
 };
